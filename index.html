@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><!-- StartFormCustomCSS --><!-- EndFormCustomCSS -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="http://img.en25.com/Web/VerticurlE10Sandbox/{d43af467-0926-4697-b2c5-4065b4bef7c2}_style.css" rel="stylesheet" type="text/css">
+<link href="http://img.en25.com/Web/VerticurlE10Sandbox/{91309c05-1009-4b6f-9c34-b4605f7020f4}_media.css" rel="stylesheet" type="text/css">
+  <script src="https://tags.tiqcdn.com/utag/verticurl-singapore-training/anbuselvan.sundaram/prod/utag.sync.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.1/jquery.xdomainrequest.min.js"></script>
+
+
+	<script>
+
+function tealiumAPI(){
+  var url = "https://cors-anywhere.herokuapp.com/https://mc.adobe.io/elcapac-mkt-stage1/campaign/customResources/cusContactInformation";
+  var xAPIKey = "8c301ebd9b7342578210296241acfc3f";
+  var access_token = "Bearer eyJ4NXUiOiJpbXNfbmExLWtleS0xLmNlciIsImFsZyI6IlJTMjU2In0.eyJpZCI6IjE1OTE4NTIxMzAwNjBfODg2NDIwOTktZTc3NC00YzhiLThjNzEtY2FmZDg5YjE4MDQ2X3VlMSIsImNsaWVudF9pZCI6IjhjMzAxZWJkOWI3MzQyNTc4MjEwMjk2MjQxYWNmYzNmIiwidXNlcl9pZCI6IkNDNUUyRDAyNUVBOTZERDcwQTQ5NUMxMkB0ZWNoYWNjdC5hZG9iZS5jb20iLCJ0eXBlIjoiYWNjZXNzX3Rva2VuIiwiYXMiOiJpbXMtbmExIiwiZmciOiJVUUpSSTNWQUZMTjVJN1VTR09BM1FQUUFHRT09PT09PSIsIm1vaSI6IjUzNjhjNzJjIiwiYyI6IjhWUVd1MTUvYzJxcmcrd1VLdjV3VXc9PSIsImV4cGlyZXNfaW4iOiI4NjQwMDAwMCIsInNjb3BlIjoiY2FtcGFpZ25fc2RrLG9wZW5pZCxkZWxpdmVyYWJpbGl0eV9zZXJ2aWNlX2dlbmVyYWwsY2FtcGFpZ25fY29uZmlnX3NlcnZlcl9nZW5lcmFsLEFkb2JlSUQsYWRkaXRpb25hbF9pbmZvLnByb2plY3RlZFByb2R1Y3RDb250ZXh0IiwiY3JlYXRlZF9hdCI6IjE1OTE4NTIxMzAwNjAifQ.MgmgLm_BMnZU3i7c8VXu0qtjLIlfwenelwcsRJkBFSkVtmj4MOJqghNzxVahSFQthRp2W3QxX0D0QoTHtVpbTSrYphpuGFANVOVdRIuRjzA7e2lwPcsIKV76jphykAYc1Ja35raCj2WbfZMye91Aa2McXhKXkraQXm3nzfVt5qxf_NaDn_gDUAydEU_GYhrD22HdjFuUNRR5J11sUuoJdCMkSbfSYf_bzEnmgFMUR26rPFSn4SaxnVh4XFacJTPqRbHuCQ6-mFt0nyX7fLTXGgzDXTRhHNdTX7Mlh9PdF5CXMsUL8FBEWONuRAEs4-SxOTIx-ec7FpJchDEsZXC3vA";
+  var body = {'dataSource': 'Browser','emediAaddress':'test.test@verticurl.com'};
+  try {
+    console.log('inside try')
+    fetch(url, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json', 'x-api-key':xAPIKey, 'Authorization':access_token},
+      body: body
+    }).then(response => response.json()).then(data => console.log(data));
+    console.log('access_token ' +access_token)
+  }
+  catch(e){
+    console.log(e);
+  }
+}
+
+function ValidateEmail(mail)
+{
+ if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
+  {
+    return (true)
+  }
+   // alert("You have entered an invalid email address!")
+    return (false)
+}
+
+	   function validate(formname)
+	   {
+		var mail=document.getElementById("entry_email1").value;
+		var pwd=document.getElementById("entry_pwd").value;
+		if(mail =="")
+	   {
+		   alert("Enter Email ID");
+		   return false;
+	   }
+	   else{
+		   if(!ValidateEmail(mail)){
+			   alert("You have entered an invalid email address!")
+			   return false;
+		   }
+	   }
+	   if(pwd =="")
+	   {
+		   alert("Enter Password");
+		   return false;
+	   }
+         var GetMailID="http://labs.verticurl.com/TealiumProductPage?GetEmail="+document.getElementById("entry_email1").value;
+       document.getElementById("GetEMailID").value=GetMailID;
+	   return true;
+
+	   document.getElementById("1687").submit();
+	   }
+</script>
+
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+<title>Login
+</title>
+
+
+
+<style>
+
+body {
+    margin: 0;
+    background-color: #404040;
+    /* color: #000000; */
+    font-family: Arial;
+    width: 100%;
+    height: 100%;
+    background-image: url(http://img.en25.com/EloquaImages/clients/VerticurlE10Sandbox/%7B7c917f1a-b55a-4af1-a9ab-24c628b62208%7D_BG.jpg);
+
+    background-repeat: no-repeat;
+
+}
+</style>
+
+
+
+
+    </head>
+	<script type="text/javascript">
+var utag_data = {
+  page_type  : "login",
+  page_name  : "Login Page",
+  event_name : "user_login"
+}
+</script>
+	<body onload="tealiumAPI()">
+<!-- Loading script asynchronously -->
+<script type="text/javascript">
+    (function(a,b,c,d){
+    a='https://tags.tiqcdn.com/utag/verticurl-singapore-training/anbuselvan.sundaram/prod/utag.js';
+    b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
+    a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+    })();
+</script>
+<div>
+		<div class="o-header">
+
+            <div class="o-head-img">
+         <img src="http://img.en25.com/EloquaImages/clients/VerticurlE10Sandbox/%7B84f93ddb-2f7e-4077-b634-a4d757449004%7D_Verticurl-Logo.jpg" alt="Verticurl Logo" title="Verticurl Logo">
+
+
+            </div>
+
+
+		</div>
+
+	</div>
+		<div style="height: 80vh;position: relative;">
+					<div style="text-align:center;position: absolute;top: 0;bottom: 0;left: 0;right: 0;margin: auto;max-height: 220px;">
+                    <div class="login-form"><h1 class="login-title">Login</h1>
+
+			<div style="width:100%;" align="center">
+		<form method="post" name="TealiumLoginPage" action="https://s1687.t.eloqua.com/e/f2" id="1687" onsubmit="return validate(this);">
+        <input value="TealiumLoginPage" type="hidden" name="elqFormName">
+    <input value="1687" type="hidden" name="elqSiteId">
+    <input name="elqCampaignId" type="hidden">
+    <input type="hidden" name="GetEMailID" id="GetEMailID">
+    <div class="form-div">
+         <div class="form-control">
+           <label>Email ID:</label>
+           <span class="form-input"><input name="entry_email1" id="entry_email1" class="txtbox_l" type="text" style="font-size: 18px;"></span>
+         </div>
+         <div class="form-control">
+           <label>Password:</label>
+           <span class="form-input"> <input name="entry_pwd" id="entry_pwd" class="txtbox_l" type="password" style="font-size: 18px;"></span>
+         </div>
+         <div class="form-submit">
+         <input name="entry_email1_login" id="entry_email1_login" class="" value="Login" type="image" style="width:100px;font-family:Arial;font-size:18px;font-weight:300;" src="http://img.en25.com/EloquaImages/clients/VerticurlE10Sandbox/{de6f568a-d43a-4d2d-a8ad-347aa11029b9}_green_sign_up.s100x100.gif">
+         </div>
+    </div>
+
+<!--<table width="350" align="center">
+
+    <tr>
+    	<td style="padding-bottom: 20px;font-family:Arial;font-size:18px;font-weight:300;">
+
+        </td>
+        <td style="padding-bottom: 20px;font-family:Arial;font-size:18px;font-weight:300;">
+     	 <input name="entry_email1" id="entry_email1" class="txtbox_l"  type="text">
+        </td>
+    </tr>
+      <tr>
+    	<td style="padding-bottom: 20px;font-family:Arial;font-size:18px;font-weight:300;">
+        	Password:
+        </td>
+        <td style="padding-bottom: 20px;font-family:Arial;font-size:18px;font-weight:300;">
+
+        <input name="entry_pwd" id="entry_pwd" class="txtbox_l"  type="password">
+        </td>
+    </tr>
+    <tr>
+    	<td colspan="2" align="center">
+
+   <input name="entry_email1_login" id="entry_email1_login" class="txtbox_l" value="Login"  type="image" style="width:100px;font-family:Arial;font-size:18px;font-weight:300;" src="http://img.en25.com/EloquaImages/clients/VerticurlE10Sandbox/{de6f568a-d43a-4d2d-a8ad-347aa11029b9}_green_sign_up.s100x100.gif">
+        </td>
+    </tr>
+    <tr>
+    <td colspan="2">
+    <br>
+     <div class="clear"></div>
+    </td>
+
+    </tr>
+</table>-->
+</form>
+		</div>
+        </div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	    </body></html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html xmlns="http://www.w3.org/1999/xhtml">   <head>     <meta http-equiv="Content-Language" content="en">     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />     <link rel="stylesheet" type="text/css" href="/nl/webForms/landingPage.css"/>     <title>Acquisition mdl 1</title>      <style type="text/css" media="all">       /* override formulary */       #header .formulary {         top: 25px;                  margin-right: 10px;         width: 180px;         right: 0;         position: absolute;          }</style>   </head>    <body style="" class="">
+<% if(request.getParameter("userAction") == "previous") { response.sendRedirect("https://www.verticurl.com/"); } %><center>
+<div id="wrap">
+<div id="header"><img class="nlui-widget" alt="placeholder_header" src="/nms/img/contentModels/placeholder_header.png" unselectable="on" />
+<div class="header-title left-title">SPECIAL OFFER</div>
+<div class="formulary container-border">
+<div class="formulary-title">Find out more</div>
+<form>
+<div><label>Name*</label><input id="name" type="text" data-nl-ismandatory="true" data-nl-label="Name" data-nl-xpath="@lastName" data-nl-type="string" /></div>
+<div><label>Email*</label><input id="email" type="text" data-nl-ismandatory="true" data-nl-label="Email" data-nl-xpath="@email" data-nl-type="string" /></div>
+<div><label>Phone</label><input id="phone" type="text" data-nl-label="Phone" data-nl-xpath="@phone" data-nl-type="string" /></div>
+</form>
+<div class="button"><a href="#" data-nl-type="action" data-nl-action="next">Find out more</a></div>
+<div class="button"><a onclick="tealiumAPI()">Tealium API Call</a></div>
+</div>
+</div>
+<div id="content">
+<div class="row">
+<div class="main bullet">
+<div style="float: left;"><img class="nlui-widget" alt="placeholder_section" src="/nms/img/contentModels/placeholder_section.png" unselectable="on" /></div>
+<div class="title">OUR OFFER</div>
+<div>Find out more about this exclusive offer. Get 40% off and access to our premium service.<br />For more information, log on to our website or contact our customer service open 24/7.</div>
+</div>
+<div class="aside with-border">
+<div class="title">WHO ARE WE?</div>
+<div>Our company was founded in 1999 and is currently present in over 54 countries. Thanks to our many key accounts, we are known as a reference in our line of business.</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div style="text-align: center;">
+<div style="float: left;"><a href="#">Contact us</a></div>
+<div style="float: right;">&copy; Copyrights</div>
+<div><a href="#"><img title="facebook" class="nlui-widget" alt="facebook" src="/xtk/img/facebook.png" unselectable="on" /></a> <a href="#"><img title="Twitter" class="nlui-widget" alt="twitter" src="/xtk/img/twitter.png" unselectable="on" /></a> <a href="#"><img title="Google" class="nlui-widget" alt="google_plus" src="/xtk/img/google_plus.png" unselectable="on" /></a> <a href="#"><img title="Linkedin" class="nlui-widget" alt="Linkedin" src="/xtk/img/linkedin.png" unselectable="on" /></a></div>
+</div>
+</div>
+</div>
+</center>
+<script type="text/javascript">// <![CDATA[
+function tealiumAPI() {
+  /*const url = "https://mc.adobe.io/elcapac-mkt-stage1/campaign/customResources/cusContactInformation";
+  const proxyurl = "https://cors-anywhere.herokuapp.com/";
+  fetch(proxyurl + url, {
+  method: 'POST',
+  headers: {'Content-Type':'application/json', 'x-api-key':'8c301ebd9b7342578210296241acfc3f', 'Authorization':'Bearer eyJ4NXUiOiJpbXNfbmExLWtleS0xLmNlciIsImFsZyI6IlJTMjU2In0.eyJpZCI6IjE1OTE4NTIxMzAwNjBfODg2NDIwOTktZTc3NC00YzhiLThjNzEtY2FmZDg5YjE4MDQ2X3VlMSIsImNsaWVudF9pZCI6IjhjMzAxZWJkOWI3MzQyNTc4MjEwMjk2MjQxYWNmYzNmIiwidXNlcl9pZCI6IkNDNUUyRDAyNUVBOTZERDcwQTQ5NUMxMkB0ZWNoYWNjdC5hZG9iZS5jb20iLCJ0eXBlIjoiYWNjZXNzX3Rva2VuIiwiYXMiOiJpbXMtbmExIiwiZmciOiJVUUpSSTNWQUZMTjVJN1VTR09BM1FQUUFHRT09PT09PSIsIm1vaSI6IjUzNjhjNzJjIiwiYyI6IjhWUVd1MTUvYzJxcmcrd1VLdjV3VXc9PSIsImV4cGlyZXNfaW4iOiI4NjQwMDAwMCIsInNjb3BlIjoiY2FtcGFpZ25fc2RrLG9wZW5pZCxkZWxpdmVyYWJpbGl0eV9zZXJ2aWNlX2dlbmVyYWwsY2FtcGFpZ25fY29uZmlnX3NlcnZlcl9nZW5lcmFsLEFkb2JlSUQsYWRkaXRpb25hbF9pbmZvLnByb2plY3RlZFByb2R1Y3RDb250ZXh0IiwiY3JlYXRlZF9hdCI6IjE1OTE4NTIxMzAwNjAifQ.MgmgLm_BMnZU3i7c8VXu0qtjLIlfwenelwcsRJkBFSkVtmj4MOJqghNzxVahSFQthRp2W3QxX0D0QoTHtVpbTSrYphpuGFANVOVdRIuRjzA7e2lwPcsIKV76jphykAYc1Ja35raCj2WbfZMye91Aa2McXhKXkraQXm3nzfVt5qxf_NaDn_gDUAydEU_GYhrD22HdjFuUNRR5J11sUuoJdCMkSbfSYf_bzEnmgFMUR26rPFSn4SaxnVh4XFacJTPqRbHuCQ6-mFt0nyX7fLTXGgzDXTRhHNdTX7Mlh9PdF5CXMsUL8FBEWONuRAEs4-SxOTIx-ec7FpJchDEsZXC3vA'},
+  body: {'dataSource': 'Browser',  'emediaaddress':'somasundaram.haldurai@verticurl.com'}
+  });*/
+  processTealiumAPI();
+}
+
+
+function processTealiumAPI() {
+    let headers = new Headers();
+    const url = "https://mc.adobe.io/elcapac-mkt-stage1/campaign/customResources/cusOnlineDBCustomer";
+
+    headers.append('Content-Type', 'application/json');
+    headers.append('Accept', 'application/json');
+    headers.append('x-api-key', '8c301ebd9b7342578210296241acfc3f');
+    headers.append('Authorization','Bearer eyJ4NXUiOiJpbXNfbmExLWtleS0xLmNlciIsImFsZyI6IlJTMjU2In0.eyJpZCI6IjE1OTE5NDIzNDUwODFfNjM5MzhlYjktN2E0NC00YzRkLTgzMmUtY2NhMTg1NjY3NTk0X3VlMSIsImNsaWVudF9pZCI6IjhjMzAxZWJkOWI3MzQyNTc4MjEwMjk2MjQxYWNmYzNmIiwidXNlcl9pZCI6IkNDNUUyRDAyNUVBOTZERDcwQTQ5NUMxMkB0ZWNoYWNjdC5hZG9iZS5jb20iLCJ0eXBlIjoiYWNjZXNzX3Rva2VuIiwiYXMiOiJpbXMtbmExIiwiZmciOiJVUU1QSjNBTEZMTjVJN1VTR09BM1FQUUFHRT09PT09PSIsIm1vaSI6IjM3MTkwNjQ2IiwiYyI6IjN4WHFoQkg4MWVmTEh4cStraDNtUHc9PSIsImV4cGlyZXNfaW4iOiI4NjQwMDAwMCIsInNjb3BlIjoiY2FtcGFpZ25fc2RrLG9wZW5pZCxkZWxpdmVyYWJpbGl0eV9zZXJ2aWNlX2dlbmVyYWwsY2FtcGFpZ25fY29uZmlnX3NlcnZlcl9nZW5lcmFsLEFkb2JlSUQsYWRkaXRpb25hbF9pbmZvLnByb2plY3RlZFByb2R1Y3RDb250ZXh0IiwiY3JlYXRlZF9hdCI6IjE1OTE5NDIzNDUwODEifQ.BzboudCLVMksZMktBGHjnVfwKYc3jlmH9NePbZAZUu4Yvh1UJ5m1gmP1BNbxSi--fC12oIKy2zNTkwYORRQ_2S1FcUkraCBd-HZ7lBVMNcS52qt9pZm51mtWA4-6JRsH3hdkctz__ldKf9_LBX9OkfSmsl-sAvOJY_IGUROGDwfXyx8GhZy00isRi1I_5ksGJp6_92ILJQMvE_oB0qu0hiqcW1mQcREL-dc28OBC55pRlOKRxwGjXqm2rKD4y5Ifrf-yEsKwOob6wmhtosPXMiRvqt4QAvM_bzJgTdpyn-c0g6KHwflhEtoX8Hd320usDoPBMB9HaQMFkaNgjvMLGQ');
+    //headers.append('Authorization', 'Basic ' + base64.encode(username + ":" +  password));
+    headers.append('Origin',url);
+
+    fetch(url, {
+        mode: 'cors',
+        credentials: 'include',
+        method: 'POST',
+        headers: headers,
+        body: {'billingAddress1': 'Github test data',  'emailAddress':'somasundaram.haldurai@verticurl.com'}
+    })
+    .then(response => response.json())
+    .then(json => console.log(json))
+    .catch(error => console.log('Authorization failed : ' + error.message));
+}
+
+
+
+// ]]></script>
+</body> </html>
